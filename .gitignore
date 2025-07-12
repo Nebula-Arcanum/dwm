@@ -1,0 +1,8 @@
+LICENSE
+README
+patches/
+*.rej
+*.orig
+*.o
+config.h
+dwm

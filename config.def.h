@@ -9,8 +9,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "3270NerdFontMono:size=33" };
+static const char dmenufont[]       = "3270NerdFontMono:size=33";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -78,18 +78,15 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
 
-static const char *termcmd2[] = { "xterm", NULL };
-static const char *browsercmd[] = {"librewolf", NULL};
-static const char *keepassxccmd[] = {"keepassxc", NULL};
-static const char *emacscmd[] = {"emacs", NULL};
+static const char *termcmd[]  = { "st", NULL };
+static const char *browsercmd[] = { "firefox", NULL };
+static const char *obsidiancmd[] = { "linux-obsidian", NULL };
 
 Autostarttag autostarttaglist[] = {
-	{.cmd = browsercmd, .tags = 1 << 0 },
-	{.cmd = keepassxccmd, .tags = 1 << 4 },
-	{.cmd = emacscmd, .tags = 1 << 7 },
-	{.cmd = termcmd2, .tags = 1 << 8 },
+	{.cmd = termcmd, .tags = 1 << 0 },
+	{.cmd = browsercmd, .tags = 1 << 1 },
+	{.cmd = obsidiancmd, .tags = 1 << 2 },
 	{.cmd = NULL, .tags = 0 },
 };
 

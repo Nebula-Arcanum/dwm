@@ -78,6 +78,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+							/* updates dwmblocks */
+static const char *volup[] = { "mixer", "vol=+1%", "&&", "pkill", "-76", "dwmblocks", NULL };
+static const char *voldown[] = { "mixer", "vol=-1%", "&&", "pkill", "-76", "dwmblocks", NULL };
+static const char *volmute[] = { "mixer", "vol.mute=toggle", "&&", "pkill", "-76", "dwmblocks", NULL };
 
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
@@ -92,6 +96,9 @@ Autostarttag autostarttaglist[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,                       XK_KP_Add, spawn,          {.v = volup } },
+	{ MODKEY,                       XK_KP_Subtract, spawn,     {.v = voldown } },
+	{ MODKEY,                       XK_KP_Multiply, spawn,     {.v = volmute } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

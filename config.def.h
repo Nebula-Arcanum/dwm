@@ -88,6 +88,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *obsidiancmd[] = { "linux-obsidian", NULL };
 
+static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+
 Autostarttag autostarttaglist[] = {
 	{.cmd = termcmd, .tags = 1 << 0 },
 	{.cmd = browsercmd, .tags = 1 << 1 },
@@ -103,6 +105,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_KP_Add, spawn,          {.v = volupdate } },
 	{ MODKEY,                       XK_KP_Subtract, spawn,     {.v = volupdate } },
 	{ MODKEY,                       XK_KP_Multiply, spawn,     {.v = volupdate } },
+	{ 0,	                        XK_Print,  spawn,	   {.v = screenshotcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

@@ -99,12 +99,12 @@ Autostarttag autostarttaglist[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_KP_Add, spawn,          {.v = volup } },
-	{ MODKEY,                       XK_KP_Subtract, spawn,     {.v = voldown } },
-	{ MODKEY,                       XK_KP_Multiply, spawn,     {.v = volmute } },
-	{ MODKEY,                       XK_KP_Add, spawn,          {.v = volupdate } },
-	{ MODKEY,                       XK_KP_Subtract, spawn,     {.v = volupdate } },
-	{ MODKEY,                       XK_KP_Multiply, spawn,     {.v = volupdate } },
+	{ 0,	                        XK_KP_Add, spawn,          {.v = volup } },
+	{ 0,	                        XK_KP_Subtract, spawn,     {.v = voldown } },
+	{ 0,	                        XK_KP_Multiply, spawn,     {.v = volmute } },
+	{ 0,	                        XK_KP_Add, spawn,          {.v = volupdate } },
+	{ 0,	                        XK_KP_Subtract, spawn,     {.v = volupdate } },
+	{ 0,	                        XK_KP_Multiply, spawn,     {.v = volupdate } },
 	{ 0,	                        XK_Print,  spawn,	   {.v = screenshotcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },

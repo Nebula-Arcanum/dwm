@@ -87,6 +87,7 @@ static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *obsidiancmd[] = { "linux-obsidian", NULL };
+static const char *ankicmd[] = { "anki", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
@@ -94,6 +95,7 @@ Autostarttag autostarttaglist[] = {
 	{.cmd = termcmd, .tags = 1 << 0 },
 	{.cmd = browsercmd, .tags = 1 << 1 },
 	{.cmd = obsidiancmd, .tags = 1 << 2 },
+	{.cmd = ankicmd, .tags = 1 << 3 },
 	{.cmd = NULL, .tags = 0 },
 };
 

@@ -83,7 +83,8 @@ static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
-static const char *wikicmd[] = { "st", "-e", "nvim", "-c", "cd\ /home/leon/Wiki/", NULL};
+//static const char *wikicmd[] = { "st", "-e", "nvim", "-c", "cd\ /home/leon/Wiki/", NULL};
+static const char *wikicmd[] = { "st", "-e", "zsh", "-l", "-c", "cd /home/leon/Wiki/ && nvim", NULL };
 static const char *ankicmd[] = { "anki", NULL };
 static const char *vitcmd[] = { "st", "-e", "vit", NULL };
 static const char *khalcmd[] = { "st", "-e", "ikhal", NULL };

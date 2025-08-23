@@ -41,7 +41,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
@@ -88,6 +88,7 @@ static const char *wikicmd[] = { "st", "-e", "zsh", "-l", "-c", "cd /home/leon/W
 static const char *ankicmd[] = { "anki", NULL };
 static const char *vitcmd[] = { "st", "-e", "vit", NULL };
 static const char *khalcmd[] = { "st", "-e", "ikhal", NULL };
+static const char *wyrdcmd[] = { "st", "-e", "wyrd", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
@@ -95,9 +96,10 @@ Autostarttag autostarttaglist[] = {
 	{.cmd = termcmd, .tags = 1 << 0 },
 	{.cmd = browsercmd, .tags = 1 << 1 },
 	{.cmd = wikicmd, .tags = 1 << 2 },
-	{.cmd = ankicmd, .tags = 1 << 4 },
 	{.cmd = vitcmd, .tags = 1 << 7 },
-	{.cmd = khalcmd, .tags = 1 << 8 },
+	// {.cmd = khalcmd, .tags = 1 << 8 },
+	{.cmd = wyrdcmd, .tags = 1 << 8 },
+	{.cmd = ankicmd, .tags = 1 << 4 },
 	{.cmd = NULL, .tags = 0 },
 };
 

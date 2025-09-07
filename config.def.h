@@ -40,8 +40,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	// { "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	// { "firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
@@ -83,7 +83,6 @@ static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
-//static const char *wikicmd[] = { "st", "-e", "nvim", "-c", "cd\ /home/leon/Wiki/", NULL};
 static const char *wikicmd[] = { "st", "-e", "zsh", "-l", "-c", "cd /home/leon/Wiki/ && nvim", NULL };
 static const char *ankicmd[] = { "anki", NULL };
 static const char *vitcmd[] = { "st", "-e", "vit", NULL };

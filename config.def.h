@@ -9,8 +9,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
-static const char *fonts[]          = { "3270NerdFontMono:size=21" };
-static const char dmenufont[]       = "3270NerdFontMono:size=21";
+static const char *fonts[]          = { "3270NerdFontMono:size=12" };
+static const char dmenufont[]       = "3270NerdFontMono:size=12";
 static const char col_white[]        = "#FFFFFF";
 static const char col_black[]        = "#000000";
 static const unsigned int baralpha = OPAQUE;

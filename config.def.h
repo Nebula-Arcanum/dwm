@@ -32,7 +32,15 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "󰖟", "󰯃", "", "󰘹", "", "7", "", "" };
+// static const char *tags[] = { "", "󰖟", "󰯃", "", "󰘹", "", "7", "", "" };
+
++/* tagging: refer to https://github.com/bakkeby/patches/wiki/tagicons */
++static const char *tags[NUMTAGS] = { NULL };  /* left for compatibility reasons, i.e. code that checks LENGTH(tags) */
++static char *tagicons[][NUMTAGS] = {
++	[IconsDefault]        = { "", "󰖟", "󰯃", "", "󰘹", "", "7", "", "", "A", "B", "C", "D", "E", "F", "G", "H", "I" },
++	[IconsVacant]         = { NULL },
++	[IconsOccupied]       = { NULL },
++};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -170,5 +178,7 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,            0,              Button4,        cycleiconset,   {.i = +1 } },
+	{ ClkTagBar,            0,              Button5,        cycleiconset,   {.i = -1 } },
 };
 

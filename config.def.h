@@ -37,7 +37,8 @@ static const char *const autostart[] = {
 /* tagging: refer to https://github.com/bakkeby/patches/wiki/tagicons */
 static const char *tags[NUMTAGS] = { NULL };  /* left for compatibility reasons, i.e. code that checks LENGTH(tags) */
 static char *tagicons[][NUMTAGS*2] = {
-	[IconsDefault]        = { "", "󰖟", "󰯃", "", "󰘹", "", "7", "", "", "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+	[IconsDefault]        = { "", "󰖟", "󰯃", "", "󰘹", "", "7", "8", "9",
+                             "", "󰖟", "", "", "E", "F", "G", "H", "I" },
 	[IconsVacant]         = { NULL },
 	[IconsOccupied]       = { NULL },
 };

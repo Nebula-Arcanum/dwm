@@ -96,7 +96,7 @@ static const char *wikicmd[] = { "st", "-e", "zsh", "-l", "-c", "cd /home/leon/W
 static const char *ankicmd[] = { "anki", NULL };
 static const char *vitcmd[] = { "st", "-e", "vit", NULL };
 static const char *khalcmd[] = { "st", "-e", "ikhal", NULL };
-static const char *wyrdcmd[] = { "st", "-e", "wyrd", NULL };
+static const char *wyrdcmd[] = { "st", "-e", "wyrd", "/home/leon/.local/share/remind/reminders" NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 

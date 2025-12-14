@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -119,6 +120,12 @@ static const Key keys[] = {
 	{ 0,	                        XK_KP_Add, spawn,          {.v = volupdate } },
 	{ 0,	                        XK_KP_Subtract, spawn,     {.v = volupdate } },
 	{ 0,	                        XK_KP_Multiply, spawn,     {.v = volupdate } },
+	{ 0,	                        XF86XK_AudioRaiseVolume, spawn,  {.v = volup } },
+	{ 0,	                        XF86XK_AudioLowerVolume, spawn,  {.v = voldown } },
+	{ 0,	                        XF86XK_AudioMute, spawn,         {.v = volmute } },
+	{ 0,	                        XF86XK_AudioRaiseVolume, spawn,  {.v = volupdate } },
+	{ 0,	                        XF86XK_AudioLowerVolume, spawn,  {.v = volupdate } },
+	{ 0,	                        XF86XK_AudioMute, spawn,         {.v = volupdate } },
 	{ 0,	                        XK_Print,  spawn,	   {.v = screenshotcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },

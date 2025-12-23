@@ -86,17 +86,21 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_white, "-sf", col_black, NULL };
 							/* updates dwmblocks */
+/* Volume control */
 static const char *volup[] = { "mixer", "vol=+1%", NULL };
 static const char *voldown[] = { "mixer", "vol=-1%", NULL };
 static const char *volmute[] = { "mixer", "vol.mute=toggle", NULL };
 static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 
+/* MusicPD pause/play */
+static const char *mpdtoggle[] = { "mpc", "toggle", NULL };
+
+/* Program launch definitions for autostarttaglist */
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *wikicmd[] = { "st", "-e", "zsh", "-l", "-c", "cd /home/leon/Wiki/ && nvim", NULL };
 static const char *ankicmd[] = { "anki", NULL };
 static const char *vitcmd[] = { "st", "-e", "vit", NULL };
-static const char *khalcmd[] = { "st", "-e", "ikhal", NULL };
 static const char *wyrdcmd[] = { "st", "-e", "wyrd", "/home/leon/.local/share/remind/reminders", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
@@ -114,18 +118,19 @@ Autostarttag autostarttaglist[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,	                        XK_KP_Add, spawn,          {.v = volup } },
-	{ 0,	                        XK_KP_Subtract, spawn,     {.v = voldown } },
-	{ 0,	                        XK_KP_Multiply, spawn,     {.v = volmute } },
-	{ 0,	                        XK_KP_Add, spawn,          {.v = volupdate } },
-	{ 0,	                        XK_KP_Subtract, spawn,     {.v = volupdate } },
-	{ 0,	                        XK_KP_Multiply, spawn,     {.v = volupdate } },
+	{ 0,	                        XK_KP_Add, spawn,                {.v = volup } },
+	{ 0,	                        XK_KP_Subtract, spawn,           {.v = voldown } },
+	{ 0,	                        XK_KP_Multiply, spawn,           {.v = volmute } },
+	{ 0,	                        XK_KP_Add, spawn,                {.v = volupdate } },
+	{ 0,	                        XK_KP_Subtract, spawn,           {.v = volupdate } },
+	{ 0,	                        XK_KP_Multiply, spawn,           {.v = volupdate } },
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn,  {.v = volup } },
 	{ 0,	                        XF86XK_AudioLowerVolume, spawn,  {.v = voldown } },
 	{ 0,	                        XF86XK_AudioMute, spawn,         {.v = volmute } },
 	{ 0,	                        XF86XK_AudioRaiseVolume, spawn,  {.v = volupdate } },
 	{ 0,	                        XF86XK_AudioLowerVolume, spawn,  {.v = volupdate } },
 	{ 0,	                        XF86XK_AudioMute, spawn,         {.v = volupdate } },
+	{ 0,	                        XK_KP_Divide, spawn,             {.v = mpdtoggle } },
 	{ 0,	                        XK_Print,  spawn,	   {.v = screenshotcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
